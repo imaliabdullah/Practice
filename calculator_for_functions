@@ -1,0 +1,97 @@
+# for addition
+def add():
+  a = int(input("Enter Your number: "))
+  b = int(input("Enter Your number: "))
+  # Addition
+  c = a + b
+  print("a + b = ", c)
+
+# for subtraction
+def sub():
+  a = int(input("Enter Your number: "))
+  b = int(input("Enter Your number: "))
+  # subtraction
+  c = a - b
+  print("a - b = ", c) 
+
+# for division
+def div():
+  a = int(input("Enter Your number: "))
+  b = int(input("Enter Your number: "))
+  # division
+  c = a / b
+  print("a / b = ", c)
+
+# for multiplication
+def multi():
+  a = int(input("Enter Your number: "))
+  b = int(input("Enter Your number: "))
+  # multiplication
+  c = a * b
+  print("a * b = ", c)
+
+# for prime number
+def is_prime():
+  number = int(input("Enter positive number: "))
+  if number < 2:
+    return False
+  for i in range(2, int(number ** 0.5) + 1):
+    if number % i == 0:
+      return False
+  return True
+
+# for prime factors
+def prime_factors():
+    """
+    Returns a list of prime factors of the given number n.
+    """
+    n = int(input("Enter the number: "))
+    factors = []
+    i = 2
+    while i <= n:
+        if n % i == 0:
+            factors.append(i)
+            n /= i
+        else:
+            i += 1
+    return factors
+
+# for square root
+def sequare():
+  import math
+  a = int(input("Enter the number: "))
+  # from library import sqrt
+  b = math.sqrt(a)
+  print("The Sequare root of " , a , " is: ", b)   
+
+# for variable
+def vari():
+  import sympy
+  from sympy import symbols
+  from sympy.solvers import solve
+  
+  x = symbols('x')
+  eq = input('Enter an equation to solve for x: 0 = ')
+  print(len(solve(eq,x)))
+  print("x = ", solve(eq,x)[0])
+
+# test loop
+qst = str(input("What kind of function you want to perform?: "))
+if qst == "Add":
+  add()
+elif qst == "Sub":
+  sub()
+elif qst == "Div":
+  div()
+elif qst == "Multi":
+  multi()
+elif qst == "prime":
+  is_prime()
+elif qst == "factors":
+  prime_factors()
+elif qst == "sequare":
+  sequare()
+elif qst == "vari":
+  vari()
+else:
+  print("Select the proper function")
